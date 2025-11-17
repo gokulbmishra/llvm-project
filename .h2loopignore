@@ -20,4 +20,11 @@ mlir/benchmark/python/
 libsycl/
 libcxxabi/
 libunwind/
-
+lld/cmake/modules/
+clang-tools-extra/
+cmake/
+llvm-libgcc/
+polly/
+third-party/
+runtimes/
+offload/
