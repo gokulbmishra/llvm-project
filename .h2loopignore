@@ -1,1 +1,23 @@
+# Ignore inactive directories (no activity in last 2 months)
+
+compiler-rt/docs/
+compiler-rt/unittests/
+compiler-rt/test/
+compiler-rt/utils/
+compiler-rt/www/
+
+cross-project-tests/
+
+libc/examples/
+
+flang-rt/examples/
+flang/
+
+llvm-libgcc/
+
+mlir/benchmark/python/
+
+libsycl/
+libcxxabi/
+libunwind/
 
