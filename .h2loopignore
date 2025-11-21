@@ -29,7 +29,6 @@ third-party/
 runtimes/
 offload/
 .ci/
-clang/
 cmake/
 cross-project-tests/
 flang-rt/
