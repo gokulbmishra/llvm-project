@@ -5,7 +5,20 @@ compiler-rt/unittests/
 compiler-rt/test/
 compiler-rt/utils/
 compiler-rt/www/
-
+clang/bindings/
+clang/cmake/
+clang/docs/
+clang/examples/
+clang/include/
+clang/runtime/
+clang/test/
+clang/tools/
+clang/unittests/
+clang/utils/
+clang/www/
+utils/bazel/examples/
+utils/bazel/llvm-project-overlay/
+utils/bazel/third_party_build/
 cross-project-tests/
 
 libc/examples/
