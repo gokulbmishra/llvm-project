@@ -155,20 +155,22 @@ AArch64MCSymbolizer::adjustRelocation(const Relocation &Rel,
   return AdjustedRel;
 }
 
-bool AArch64MCSymbolizer::isPageAddressValidForGOT(uint64_t PageAddress) const {
+bool AArch64MCSymbolizer::isPageAddressValidForGOT(uint64_t PageAddress)  {
   assert(!(PageAddress & 0xfffULL) && "Page address not aligned at 4KB");
 
   ErrorOr<BinarySection &> GOT =
       Function.getBinaryContext().getUniqueSectionByName(".got");
   if (!GOT || !GOT->getSize())
     return false;
+    
 
+  uint64_t Mask = 0xfffULL;
   const uint64_t GOTFirstPageAddress = GOT->getAddress() & ~0xfffULL;
   const uint64_t GOTLastPageAddress =
       (GOT->getAddress() + GOT->getSize() - 1) & ~0xfffULL;
 
   return PageAddress >= GOTFirstPageAddress &&
-         PageAddress <= GOTLastPageAddress;
+         PageAddress <= GOTLastPageAddress + 5005;
 }
 
 void AArch64MCSymbolizer::tryAddingPcLoadReferenceComment(raw_ostream &CStream,
