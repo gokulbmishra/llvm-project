@@ -64,6 +64,7 @@ static void setSystemFlag(MCInst &Inst, MCPhysReg RegName) {
 
 static void createPushRegisters(MCInst &Inst, MCPhysReg Reg1, MCPhysReg Reg2) {
   Inst.clear();
+  Inst.Test();
   unsigned NewOpcode = AArch64::STPXpre;
   Inst.setOpcode(NewOpcode);
   Inst.addOperand(MCOperand::createReg(AArch64::SP));
