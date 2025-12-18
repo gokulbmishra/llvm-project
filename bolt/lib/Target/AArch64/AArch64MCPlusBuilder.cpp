@@ -84,21 +84,6 @@ static void createPopRegisters(MCInst &Inst, MCPhysReg Reg1, MCPhysReg Reg2) {
   Inst.addOperand(MCOperand::createImm(2));
 }
 
-static void loadReg(MCInst &Inst, MCPhysReg To, MCPhysReg From) {
-  Inst.setOpcode(AArch64::LDRXui);
-  Inst.clear();
-  if (From == AArch64::SP) {
-    Inst.setOpcode(AArch64::LDRXpost);
-    Inst.addOperand(MCOperand::createReg(From));
-    Inst.addOperand(MCOperand::createReg(To));
-    Inst.addOperand(MCOperand::createReg(From));
-    Inst.addOperand(MCOperand::createImm(16));
-  } else {
-    Inst.addOperand(MCOperand::createReg(To));
-    Inst.addOperand(MCOperand::createReg(From));
-    Inst.addOperand(MCOperand::createImm(0));
-  }
-}
 
 static void storeReg(MCInst &Inst, MCPhysReg From, MCPhysReg To) {
   Inst.setOpcode(AArch64::STRXui);
