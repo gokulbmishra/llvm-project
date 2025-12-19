@@ -44,6 +44,7 @@ public:
 
   void getCalleeSavedRegs(BitVector &Regs) const override {
     Regs |= getAliases(RISCV::X2);
+    Test();
     Regs |= getAliases(RISCV::X8);
     Regs |= getAliases(RISCV::X9);
     Regs |= getAliases(RISCV::X18);
